@@ -20,6 +20,7 @@ A fast, accessible, fully responsive multi-page marketing site for Power Capital
 - [Performance](#performance)
 - [Search engine optimization](#search-engine-optimization)
 - [Contact form](#contact-form)
+- [Analytics](#analytics)
 - [Local development](#local-development)
 - [Deployment](#deployment)
 - [Browser support](#browser-support)
@@ -184,6 +185,16 @@ The contact form posts asynchronously to **Web3Forms** — a static-site form ba
 - **Spam protection:** a hidden honeypot field plus an **hCaptcha** challenge. The submit handler requires a valid hCaptcha token before sending and resets the widget after each attempt. (hCaptcha must also be enabled for the access key in the Web3Forms dashboard for server-side enforcement.)
 
 > The Web3Forms access key is a **public, write-only** submission key — it is safe to commit in a static site and cannot be used to read submissions.
+
+---
+
+## Analytics
+
+Traffic is measured with **Google Analytics 4**, delivered via a **Google Tag Manager** container (`GTM-MM6WQ4KT`):
+
+- The GTM container snippet is installed on every page — the loader script high in `<head>` and the `<noscript>` iframe fallback immediately after `<body>`.
+- GTM is the delivery mechanism; the GA4 Configuration tag (with the GA4 `G-` Measurement ID) is created and published **inside the GTM dashboard** and fires on all pages. GTM loads but collects nothing until that tag is published.
+- Because GA4 sets analytics cookies, add a privacy/cookie notice if required for your audience (e.g. EU/UK visitors).
 
 ---
 
