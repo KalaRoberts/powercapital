@@ -164,7 +164,7 @@ On-page SEO is built into the files and targets the final domain (`powercapital.
 
 - **Unique title tags and meta descriptions** per page, written around the data-center / infrastructure-finance niche.
 - **Canonical URLs** on every page pointing at the final `https://powercapital.cloud/...` address — so search engines never split ranking signals between the GitHub Pages path and the custom domain.
-- **Open Graph + Twitter Card tags** for rich link previews when the URL is shared (iMessage, LinkedIn, social). Each page sets its own preview title (e.g. home → *"Power Capital: John Roberts, Founder"*, interior pages → *"Power Capital: About/Services/…"*), the home preview description is *"Capital strategy for heavy infrastructure, without the C-suite overhead,"* and all are backed by a branded 1200×630 share image (`assets/img/og-cover.png`).
+- **Open Graph + Twitter Card tags** for rich link previews when the URL is shared (iMessage, LinkedIn, social). Each page sets its own preview title (e.g. home → *"Power Capital: John Roberts, Founder"*, interior pages → *"Power Capital: About/Services/…"*), the home preview description is *"Capital strategy for cloud infrastructure, without the C-suite overhead,"* and all are backed by a branded 1200×630 share image (`assets/img/og-cover.png`).
 - **Structured data (JSON-LD)** — a `ProfessionalService` schema on the home page (services, expertise, founder) and a `Person` schema on the About page, so search engines understand the business and who runs it.
 - **`sitemap.xml`** listing all pages (final-domain URLs, prioritized) and **`robots.txt`** allowing crawling and pointing to the sitemap.
 - Semantic structure, a single `<h1>` per page, and descriptive image `alt` text.
