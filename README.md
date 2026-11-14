@@ -1,8 +1,15 @@
-# Power Capital — Fractional CFO Website
+# Power Capital — Fractional CFO Website (original HTML version, archived)
 
-A fast, accessible, fully responsive multi-page marketing site for Power Capital, the fractional-CFO practice of John Roberts. Built as a hand-authored static site — no framework, no build step, no runtime dependencies — and deployed on GitHub Pages behind a custom domain.
+> **Archived: retired 2026-11-14.** This hand-written HTML version was used to design the site and to first publish it on `powercapital.cloud`. The live site is now the Astro + TinaCMS rebuild in the [`KalaRoberts/powercapital-cms`](https://github.com/KalaRoberts/powercapital-cms) repo, hosted on Cloudflare Workers and edited by the client in TinaCloud. Make content and code changes there, not here.
+>
+> **Kept as a rollback, on purpose:** GitHub Pages is still switched on and `CNAME` is still in place. If the new site ever had to be rolled back, the DNS records in the Deployment section below would point the domain here again (steps in `CUTOVER-PLAN.md` → Rollback in the new repo). Until then this site is **not** reachable at `powercapital.cloud`. Don't delete the repo, turn off Pages or remove `CNAME`.
+>
+> The text and design here were the source for the new site's pages. They may now be out of date, because the client edits the live content in TinaCloud.
 
-**Live site:** [https://powercapital.cloud](https://powercapital.cloud)
+
+A fast, accessible, fully responsive multi-page marketing site for Power Capital, the fractional-CFO practice of John Roberts. Built as a hand-authored static site — no framework, no build step, no runtime dependencies — and deployed on GitHub Pages behind a custom domain until the 2026-11-14 cutover.
+
+**Live site:** [https://powercapital.cloud](https://powercapital.cloud), now built from the `powercapital-cms` repo, not this one.
 
 **Stack:** Semantic HTML5 · modern CSS (custom properties, Grid, Flexbox) · vanilla JavaScript (ES5-safe) · GitHub Pages
 
@@ -169,7 +176,7 @@ On-page SEO is built into the files and targets the final domain (`powercapital.
 - **`sitemap.xml`** listing all pages (final-domain URLs, prioritized) and **`robots.txt`** allowing crawling and pointing to the sitemap.
 - Semantic structure, a single `<h1>` per page, and descriptive image `alt` text.
 
-**Deferred until the domain is live (intentionally):** submitting the sitemap to Google Search Console and requesting indexing. Doing this once, at the real `powercapital.cloud` URL, avoids getting the interim GitHub Pages path indexed as duplicate content.
+**Search Console:** done after the cutover (2026-11-14) against the new site. Its sitemap uses the new addresses without `.html`, and the old `.html` addresses redirect to them. This repo's `sitemap.xml` still lists the `.html` addresses and only applies in a rollback.
 
 ---
 
@@ -189,6 +196,8 @@ The contact form posts asynchronously to **Web3Forms** — a static-site form ba
 ---
 
 ## Analytics
+
+> **Historical.** The new site loads GA4 (`G-ZZ170WEYFW`, owned by the client) directly, without Tag Manager, and adds custom events. The setup below describes this archived version only.
 
 Traffic is measured with **Google Analytics 4**, delivered via a **Google Tag Manager** container (`GTM-MM6WQ4KT`):
 
@@ -219,7 +228,9 @@ Then open `http://localhost:8000/`. Editing HTML/CSS/JS and refreshing is the fu
 
 ## Deployment
 
-Hosted on **GitHub Pages** as a project site:
+> **Historical.** Since 2026-11-14 the domain's DNS points to Cloudflare Workers Custom Domains, and the GitHub Pages records were deleted. For a rollback, those records would be re-added in the client's Cloudflare DNS: four `A` records for `@` (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and `CNAME www → kalaroberts.github.io`, after removing the Worker's Custom Domains. Then, if **Settings → Pages** shows the custom domain as not verified, re-save `powercapital.cloud` there and tick **Enforce HTTPS** again once the certificate is issued.
+
+Was hosted on **GitHub Pages** as a project site:
 
 1. Push the site to a GitHub repository.
 2. In **Settings → Pages**, set the source to the `main` branch (root).
